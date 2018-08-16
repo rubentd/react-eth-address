@@ -1,0 +1,48 @@
+{
+  "name": "react-eth-address",
+  "version": "0.1.0",
+  "description": "Ethereum address React Component",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "./node_modules/webpack-cli/bin/cli.js --mode=production",
+    "test": "npm test",
+    "prepublish": "npm run build; npm run examples",
+    "examples": "./node_modules/webpack-cli/bin/cli.js --config=webpack.config.examples.js --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubentd/react-eth-address.git"
+  },
+  "keywords": [
+    "ethereum",
+    "eth",
+    "address",
+    "react"
+  ],
+  "author": "Ruben Torres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rubentd/react-eth-address/issues"
+  },
+  "homepage": "https://github.com/rubentd/react-eth-address#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "~8.2.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-decorators-legacy": "~1.3.4",
+    "babel-preset-es2015": "~6.24.1",
+    "babel-preset-es2017": "~6.24.1",
+    "babel-preset-react": "~6.24.1",
+    "babel-preset-stage-0": "~6.24.1",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.0.8",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}

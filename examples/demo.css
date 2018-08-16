@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 10px;
+  font-family: Helvetica, Arial, sans-serif
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h4 {
+  margin: 10px 0;
+}
