@@ -9,10 +9,12 @@ class EthAddress extends React.Component {
   static propTypes = {
     // eth address
     address: string,
-    // make a link to etherscan
-    etherscan: bool,
     // compact mode shows first 4 and last 4 characters
     compact: bool,
+    // enable or disable the ability to copy to clipboard
+    copyToClipboard: bool,
+    // make a link to etherscan
+    etherscan: bool,
     // extra classes
     className: string,
   };
