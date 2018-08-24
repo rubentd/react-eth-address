@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, string } from 'prop-types';
+import { bool, number, string } from 'prop-types';
 import copy from 'copy-to-clipboard';
 import CopyIcon from './CopyIcon';
 import { isAddress } from './util';
@@ -11,6 +11,8 @@ class EthAddress extends React.Component {
     address: string,
     // compact mode shows first 4 and last 4 characters
     compact: bool,
+    // number of visible characters for compact mode
+    visibleCharacters: number,
     // enable or disable the ability to copy to clipboard
     copyToClipboard: bool,
     // make a link to etherscan
@@ -21,6 +23,7 @@ class EthAddress extends React.Component {
 
   static defaultProps = {
     compact: true,
+    visibleCharacters: 8,
     copyToClipboard: true,
     etherscan: false,
     className: '',
@@ -63,6 +66,7 @@ class EthAddress extends React.Component {
     const {
       etherscan,
       compact,
+      visibleCharacters,
       copyToClipboard,
       className,
     } = this.props;
@@ -71,8 +75,13 @@ class EthAddress extends React.Component {
 
     const address = this.props.address.startsWith('0x') ? this.props.address : `0x${this.props.address}`;
 
+    const visible = (visibleCharacters > 42) ? 42 :
+      (visibleCharacters < 2) ? 2 : visibleCharacters; 
+    const visibleFirst = Math.ceil(visible / 2);
+    const visibleLast = Math.floor(visible / 2);
+
     const displayAddress = compact ? (
-      `${address.substr(0, 6)}....${address.substr(38, 42)}`
+      `${address.substr(0, (visibleFirst + 2))}${visible < 42 ? '...' : ''}${address.substr(42 - visibleLast, 42)}`
     ) : address;
 
     if (!isAddress(address)) {

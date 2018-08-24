@@ -22,12 +22,13 @@ React.render(
 
 ## Available Props
 
-prop      | type                 | description | default value
-----------|----------------------|--------------|-----------
-`address`   | `string`           |              | 
-`etherscan`| `bool`              |  enable link to etherscan     |`false`
-`compact`| `bool`                |  enable compact mode (first 4 and last 4 characters)   |`true` 
-`className`| `string`            |  Add extra css classes    |`true` 
+prop       | type                 | description                | default value
+-----------|----------------------|----------------------------|-------------------
+`address`  | `string`             |  ethereum address to be displayed | 
+`etherscan`| `bool`               |  enable link to etherscan  |`false`
+`className`| `string`             |  Add extra css classes     |`true` 
+`compact`  | `bool`               |  enable compact mode (show less characters)     |`true`
+`visibleCharacters` | `number`    |  Number of visible characters for compact mode  |  8
 
 ## Custom Styles
 

@@ -15,6 +15,16 @@ const Demo = () => (
 
     <section>
       <h4>
+        Show first 6 and last 6 characters
+      </h4>
+      <EthAddress
+        address="0x06012c8cf97bead5deae237070f9587f8e7a266d"
+        visibleCharacters={12}
+      />
+    </section>
+
+    <section>
+      <h4>
         Show full address:
       </h4>
       <EthAddress
