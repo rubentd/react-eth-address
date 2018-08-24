@@ -101,6 +101,7 @@ class EthAddress extends React.Component {
         href={`https://etherscan.io/search?q=${address}`}
         target="_blank"
         className={classes}
+        title={address}
       >
         { displayAddress }
       </a>
@@ -108,6 +109,7 @@ class EthAddress extends React.Component {
       <span
         className={classes}
         onClick={this.onClick}
+        title={address}
       >
         { displayAddress } { copyToClipboard && <CopyIcon /> }
         {
